@@ -8,5 +8,5 @@
     <preConditions>
         <dbms type="mysql" />
     </preConditions>
-    <includeAll path="scripts/1.0.0/"/>
+    <include file="/scripts/1.0.0/26-12-2020_01.sql" relativeToChangelogFile="true"/>
 </databaseChangeLog>
