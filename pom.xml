@@ -48,6 +48,17 @@
 			<artifactId>spring-boot-starter-test</artifactId>
 			<scope>test</scope>
 		</dependency>
+		<dependency>
+			<groupId>mysql</groupId>
+			<artifactId>mysql-connector-java</artifactId>
+			<version>5.0.4</version>
+		</dependency>
+		<dependency>
+			<groupId>org.apache.maven.plugins</groupId>
+			<artifactId>maven-resources-plugin</artifactId>
+			<version>3.1.0</version>
+			<type>maven-plugin</type>
+		</dependency>
 	</dependencies>
 
 	<build>
@@ -63,6 +74,30 @@
 						</exclude>
 					</excludes>
 				</configuration>
+			</plugin>
+			<plugin>
+				<groupId>org.liquibase</groupId>
+				<artifactId>liquibase-maven-plugin</artifactId>
+				<version>3.1.0</version>
+				<configuration>
+					<changeLogFile>src/main/Banco/changelog/changelog_master.xml</changeLogFile>
+					<driver>com.mysql.jdbc.Driver</driver>
+				</configuration>
+				<executions>
+					<execution>
+						<id>liquibase-install</id>
+						<phase>install</phase>
+						<goals>
+							<goal>update</goal>
+						</goals>
+						<configuration>
+							<driver>com.mysql.cj.jdbc.Driver</driver>
+							<url>jdbc:mysql://34.70.244.90/contas_pagar</url>
+							<username>contas-pagar</username>
+							<password>h$Q1fcXxpSCF6XmrA</password>
+						</configuration>
+					</execution>
+				</executions>
 			</plugin>
 		</plugins>
 	</build>
