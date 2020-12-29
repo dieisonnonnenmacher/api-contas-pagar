@@ -1,22 +1,22 @@
 package br.com.apicontaspagar.dto;
 
-import lombok.AllArgsConstructor;
 import lombok.Getter;
+import lombok.NoArgsConstructor;
 import lombok.Setter;
+import org.joda.time.LocalDate;
 
-import javax.persistence.Column;
-import java.sql.Date;
+
 
 @Getter
 @Setter
-@AllArgsConstructor
+@NoArgsConstructor
 public class ContasDto {
 
     private String nome;
     private Double valorOriginal;
     private Double valorCorrigido;
     private Integer diasAtraso;
-    private Date dataPagamento;
-    private Date dataVencimento;
+    private LocalDate dataPagamento;
+    private LocalDate dataVencimento;
 
 }

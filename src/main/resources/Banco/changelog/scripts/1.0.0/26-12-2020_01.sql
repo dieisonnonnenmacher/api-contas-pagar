@@ -15,5 +15,3 @@ CREATE TABLE  `contas` (
 
 --rollback drop table `product`;
 
-
-        -- rollback delete from `product` where id = 1;
