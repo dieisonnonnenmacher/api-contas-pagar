@@ -39,5 +39,13 @@ public class MotorCalculoTest{
         when(contasDto.getDataVencimento()).thenReturn(new LocalDate("2020-11-03"));
         assertEquals(retornoEsperado,motorCalculo.calcularValorCorrigido(contasDto),00.00);
     }
+
+    @Test
+    public void deveRetornarRegra() {
+        String retornoEsperado = "3% multa + 0,2% juros/dia";
+        when(contasDto.getDataPagamento()).thenReturn(new LocalDate("2020-11-09"));
+        when(contasDto.getDataVencimento()).thenReturn(new LocalDate("2020-11-05"));
+        assertEquals(retornoEsperado,motorCalculo.getRegraCalculo(contasDto));
+    }
 }
 

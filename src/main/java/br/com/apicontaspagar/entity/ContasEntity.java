@@ -38,4 +38,7 @@ public class ContasEntity implements Serializable {
     @Column(name = "data_vencimento", nullable = false)
     private Date dataVencimento;
 
+    @Column(name = "regra_calculo", nullable = false)
+    private String regra_calculo;
+
 }

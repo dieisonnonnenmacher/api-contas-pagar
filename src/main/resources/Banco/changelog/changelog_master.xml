@@ -9,4 +9,5 @@
         <dbms type="mysql" />
     </preConditions>
     <include file="/scripts/1.0.0/26-12-2020_01.sql" relativeToChangelogFile="true"/>
+    <include file="/scripts/1.1.0/INCLUDE_COLUMN_REGRA_CALCULO.sql" relativeToChangelogFile="true"/>
 </databaseChangeLog>

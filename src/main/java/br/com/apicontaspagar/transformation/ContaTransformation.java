@@ -29,6 +29,7 @@ public class ContaTransformation {
         to.setValorOriginal(from.getValorOriginal());
         to.setDiasAtraso(motorCalculo.calcularDiasAtraso(from));
         to.setValorCorrigido(motorCalculo.calcularValorCorrigido(from));
+        to.setRegra_calculo(motorCalculo.getRegraCalculo(from));
         return to;
     }
 
@@ -41,6 +42,7 @@ public class ContaTransformation {
         to.setValorOriginal(from.getValorOriginal());
         to.setDiasAtraso(from.getDiasAtraso());
         to.setValorCorrigido(from.getValorCorrigido());
+        to.setRegra_calculo(from.getRegra_calculo());
         return to;
     }
 

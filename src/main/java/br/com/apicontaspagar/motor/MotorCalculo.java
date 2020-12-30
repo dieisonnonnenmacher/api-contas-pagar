@@ -34,11 +34,11 @@ public class MotorCalculo {
 
         if(diasAtraso < 1 ) return conta.getValorOriginal();
 
-        if(diasAtraso < 3){
+        if(diasAtraso < 4){
             return conta.getValorOriginal() +
                     ((MULTA_ATE_TRES_DIAS * conta.getValorOriginal()) / 100)
                     + ((JUROS_ATE_TRES_DIAS * diasAtraso) * conta.getValorOriginal());
-        } else if(diasAtraso < 5){
+        } else if(diasAtraso < 6){
             return conta.getValorOriginal() +
                     ((MULTA_ATE_CINCO_DIAS * conta.getValorOriginal()) / 100)
                     + ((JUROS_ATE_CINCO_DIAS * diasAtraso) * conta.getValorOriginal());
@@ -48,4 +48,19 @@ public class MotorCalculo {
                     + ((JUROS_SUPERIOR_CINCO_DIAS * diasAtraso) * conta.getValorOriginal());
         }
     }
-}
+
+    public static String getRegraCalculo(ContasDto conta) {
+        int diasAtraso = calcularDiasAtraso(conta);
+
+        if(diasAtraso < 1 ) return "pago em dia";
+
+        if(diasAtraso < 4){
+            return "2% multa + 0,1% juros/dia";
+        } else if(diasAtraso < 6){
+            return "3% multa + 0,2% juros/dia";
+        } else{
+            return "5% multa + 0,3% juros/dia";
+        }
+    }
+
+  }

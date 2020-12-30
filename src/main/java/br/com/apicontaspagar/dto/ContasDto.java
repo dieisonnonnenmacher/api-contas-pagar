@@ -18,5 +18,6 @@ public class ContasDto {
     private Integer diasAtraso;
     private LocalDate dataPagamento;
     private LocalDate dataVencimento;
+    private String regra_calculo;
 
 }
