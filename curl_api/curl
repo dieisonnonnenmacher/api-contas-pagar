@@ -1,0 +1,18 @@
+
+Registrar
+
+curl --location --request POST 'http://localhost:9852/contas/registrar' \
+--header 'Content-Type: application/json' \
+--data-raw '  {
+      "nome":"Dieison Nonnenmacher",
+      "valorOriginal":"50",
+      "dataPagamento":"2020-12-30",
+      "dataVencimento":"2020-12-20"
+  } 
+'
+
+
+Listar
+
+
+curl --location --request GET 'http://localhost:9852/contas/listar'
