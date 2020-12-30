@@ -18,8 +18,6 @@ public class MotorCalculo {
     final static int MULTA_SUPERIOR_CINCO_DIAS = 5;
     final static double JUROS_SUPERIOR_CINCO_DIAS = 0.003;
 
-    private static SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd hh:mm:ss zzz");
-
     public static int calcularDiasAtraso(ContasDto conta) {
         int diasAtraso = 0;
         LocalDate dateTimePagamento = conta.getDataPagamento();
